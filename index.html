@@ -816,12 +816,11 @@ function lbKey(e){if(e.key==='Escape')closeLightbox({target:document.getElementB
             <li><span class="place">🍺 The Sand Bar</span><span class="dist">14 min</span></li>
             <li><span class="place">🏡 Homestead Cafe &amp; Bakery</span><span class="dist">15 min</span></li>
             <li><span class="place">🛖 Log Cabin Store</span><span class="dist">15 min</span></li>
-            <li><span class="place">🏔️ Yellow Lake Lodge</span><span class="dist">16 min</span></li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="location-image" style="position:relative;border-radius:12px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.18);">
+    <div class="location-image" style="position:relative;border-radius:12px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.18);margin-top:3.5rem;">
       <div id="area-map"></div>
       <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(17,27,21,.6));padding:1rem 1.25rem;pointer-events:none;">
         <p style="margin:0;font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.75);">📍 Johnson Lake, Webster WI · All distances approximate</p>
@@ -838,7 +837,7 @@ window.addEventListener('load',function(){
   function ico(c,e){return L.divIcon({className:'',html:'<div style="background:'+c+';width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,.3);border:2px solid white;">'+e+'</div>',iconSize:[36,36],iconAnchor:[18,18],popupAnchor:[0,-20]});}
   L.marker([45.9413,-92.3137],{icon:ico('#2d5a27','🏡'),zIndexOffset:1000}).addTo(map).bindPopup('<strong>Johnson Lake House</strong><br><em>Your home base</em>').openPopup();
   [[45.9097,-92.3381,'🌊','Devils Lake','9 min'],[45.9255,-92.4229,'🏕️','Yellow Lake','11 min'],[45.9393,-92.4219,'🏛️','Forts Folle Avoine','14 min'],[45.8097,-92.2007,'🎰','St. Croix Casino','15 min'],[45.9616,-92.1517,'⛳','Voyageur Village Golf','~20 min']].forEach(function(p){L.marker([p[0],p[1]],{icon:ico('#4a6741',p[2])}).addTo(map).bindPopup('<strong>'+p[3]+'</strong><br>'+p[4]);});
-  [[45.8823,-92.3644,'🍳',"Emily's Luncheon",'13 min'],[45.9330,-92.1826,'🍺','The Sand Bar','14 min'],[45.9280,-92.4206,'🏔️','Yellow Lake Lodge','16 min'],[45.7866,-92.3805,'☕','Homestead Cafe & Bakery','15 min']].forEach(function(p){L.marker([p[0],p[1]],{icon:ico('#c17f3a',p[2])}).addTo(map).bindPopup('<strong>'+p[3]+'</strong><br>'+p[4]);});
+  [[45.8823,-92.3644,'🍳',"Emily's Luncheon",'13 min'],[45.9330,-92.1826,'🍺','The Sand Bar','14 min'],[45.7866,-92.3805,'☕','Homestead Cafe & Bakery','15 min']].forEach(function(p){L.marker([p[0],p[1]],{icon:ico('#c17f3a',p[2])}).addTo(map).bindPopup('<strong>'+p[3]+'</strong><br>'+p[4]);});
   var leg=L.control({position:'bottomright'});leg.onAdd=function(){var d=L.DomUtil.create('div');d.style.cssText='background:white;padding:.65rem 1rem;border-radius:8px;font-size:.8rem;font-family:Jost,sans-serif;font-weight:600;color:#1e3326;box-shadow:0 2px 12px rgba(0,0,0,.2);line-height:2.2;';d.innerHTML='<div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#2d5a27;margin-right:5px;vertical-align:middle;"></span>Your Stay</div><div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4a6741;margin-right:5px;vertical-align:middle;"></span>Nearby</div><div><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c17f3a;margin-right:5px;vertical-align:middle;"></span>Dining</div>';return d;};leg.addTo(map);
   setTimeout(function(){map.invalidateSize();},500);
 });
@@ -1278,8 +1277,7 @@ function toggleFaq(el) {
         [45.878, -92.356, "🍳 Emily's Luncheon", "13 min drive"],
         [45.874, -92.238, "🍺 The Sand Bar", "14 min drive"],
         [45.877, -92.352, "🏡 Homestead Cafe & Bakery", "15 min drive"],
-        [45.877, -92.350, "🛖 Log Cabin Store", "15 min drive"],
-        [45.873, -92.235, "🏔️ Yellow Lake Lodge", "16 min drive"]
+        [45.877, -92.350, "🛖 Log Cabin Store", "15 min drive"]
       ];
       restaurants.forEach(function(r) {
         L.marker([r[0], r[1]], {icon: dineIcon}).addTo(map)
