@@ -640,6 +640,14 @@
 </section>
 <div id="lightbox" onclick="closeLightbox(event)"><span id="lightbox-close" onclick="closeLightbox()">&#x2715;</span><span id="lightbox-prev" onclick="event.stopPropagation();shiftLightbox(-1)">&#8249;</span><img id="lightbox-img" src="" alt=""/><span id="lightbox-next" onclick="event.stopPropagation();shiftLightbox(1)">&#8250;</span><div id="lightbox-caption"></div></div>
 <script>
+function showTab(id, el) {
+  document.querySelectorAll('.amenity-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.amenity-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+<script>
 function filterGallery(cat,btn){document.querySelectorAll('.gallery-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.gallery-category').forEach(el=>el.classList.toggle('visible',el.dataset.cat===cat));}
 let _lbItems=[],_lbIdx=0;
 function openLightbox(el){const v=document.querySelector('.gallery-category.visible');const c=v||document.querySelector('[data-cat="all"]');_lbItems=Array.from(c.querySelectorAll('[onclick]'));_lbIdx=_lbItems.indexOf(el);showLightboxItem(_lbIdx);document.getElementById('lightbox').classList.add('open');document.addEventListener('keydown',lbKey);}
