@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://johnsonlake-home.com",
+      "permanent": true
+    }
+  ]
+}
