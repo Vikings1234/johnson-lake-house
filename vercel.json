@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "johnson-lake-house.vercel.app"
+        }
+      ],
+      "destination": "https://johnsonlake-home.com/$1",
+      "permanent": true
+    }
+  ]
+}
